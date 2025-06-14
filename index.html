@@ -1,194 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella Vita Resturant</title>
-    <style>
-        :root {
-            --primary: #a93226;
-            --dark: #1c1c1c;
-            --light: #f9f9f9;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home / Bella Vita Restaurant</title>
+		<style>
+			:root {
+				--primary: #f14a00;
+				--dark: #1c1c1c;
+				--light: #f9f9f9;
+			}
 
-        body {
-            margin: 0;
-            font-family: segoe 'Segoe UI', sans-serif;
-            color: #333;
-            background: var(--light);
-        }
+			body {
+				margin: 0;
+				font-family: segoe "Segoe UI", sans-serif;
+				color: #333;
+				background: var(--light);
+			}
 
-        header {
-            background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092')
-            center/cover no-repeat;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
+			header {
+				background: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092")
+					center/cover no-repeat;
+				height: 90vh;
+			}
 
-        header h1 {
-            font-size: 3rem;
-            margin: 0 0 1rem;
-        }
+			.header-text {
+				color: white;
+				text-align: center;
+				height: 80vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
 
-        header div {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 2rem;
-            border-radius: 1rem;
-        }
+			header h1 {
+				font-size: 3rem;
+				margin: 0 0 1rem;
+			}
 
-        header p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
+			header div {
+				padding: 2rem;
+				border-radius: 1rem;
+			}
 
-        header button {
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            border: none;
-            background: var(--primary);
-            color: white;
-            cursor: pointer;
-            border-radius: 0.5rem;
-        }
+			header p {
+				font-size: 1.25rem;
+				margin-bottom: 2rem;
+			}
 
-        section,footer {
-            padding: 4rem 2rem;
-            max-width: 1000px;
-            margin:auto
-        }
+			header button {
+				height: 7vh;
+				width: 17vh;
+				border: none;
+				background: var(--primary);
+				color: white;
+				cursor: pointer;
+				border-radius: 0.5rem;
+				text-transform: lowercase;
+			}
 
-        p{
-            font-weight: 900 ;
-        }
+			nav {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				height: 10vh;
+				background-color: transparent;
+			}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: var(--dark);
-        }
+			nav > a {
+				color: #ffffff;
+				text-decoration: none;
+				text-transform: capitalize;
+			}
 
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
+			section {
+				max-width: 1200px; /* Prevents container from stretching too wide */
+				margin: 0 auto; /* Centers container horizontally */
+				padding: 40px; /* Adds space inside container */
+				width: 90%; /* Allows container to shrink on smaller screens */
+				box-sizing: border-box;
+			}
 
-        .menu-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 0 10px; 
-        }
+			p {
+				font-weight: 900;
+			}
 
-        .menu-item h3 {
-            margin-top: 0;
-        }
+			h2 {
+				text-align: center;
+				margin-bottom: 2rem;
+				font-size: 2rem;
+				color: var(--dark);
+			}
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+			.menu {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 1.5rem;
+			}
 
-        input, textarea {
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            width: 100%;
-        }
+			.menu-item {
+				background: white;
+				padding: 1rem;
+				border-radius: 0.5rem;
+				box-shadow: 0 0 10px;
+			}
 
-        .flex-btn{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          
-        }
+			.menu-item h3 {
+				margin-top: 0;
+			}
 
-        .submit {
-            background: var(--primary);
-            color: white;
-            width: 150px;
-            height: 80px;
-            text-align: center;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-        }
+			form {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
 
-        @media (max-width: 600px) {header h1 {font-size: 2rem;}
-        }
+			input,
+			textarea {
+				padding: 0.75rem;
+				border: 1px solid #ccc;
+				border-radius: 0.5rem;
+				font-size: 1rem;
+				width: 100%;
+			}
 
-        *{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
+			.flex-btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
-        footer{
-            display: flex;
-            justify-content: left;
-            align-items: left;
-            flex-direction: column;
-        }
+			.submit {
+				background: var(--primary);
+				color: white;
+				width: 150px;
+				height: 60px;
+				text-align: center;
+				border-radius: 10px;
+				border: none;
+				cursor: pointer;
+			}
 
-        
-    
-    </style>
+			@media (max-width: 600px) {
+				header h1 {
+					font-size: 2rem;
+				}
+			}
 
+			* {
+				font-family: Georgia, "Times New Roman", Times, serif;
+			}
 
-</head>
-<body>
-    
-    <header>
-        <div>
-            <h1>Bella Vita</h1>
-            <p>Authentic Italian Cuisine in the Heart of the City</p>
-            <button>Book a Table</button>
-        </div>
-    </header>
+			.footer-flex {
+				display: flex;
+				justify-content: space-between;
+				align-items: start;
+				flex-direction: row;
+				color: #ffffff;
+			}
 
-    <section>
-        <h2>Our Menu</h2>
-        <div class="Menu">
-            <div class="Menu-item">
-    <h3>Margherita Pizza</h3>
-    <p>Classic Delight with Fresh Basil, Mozarella & Tomato Sauce</p>
-            </div>
-        <div class="Menu-item">
-            <h3>Spaghetti Carbonara</h3>
-            <p>Traditional Roman Recipe With Eggs, Chesse & Pancetta.</p>
-            </div>
+			footer {
+				background-color: #f14a00;
+			}
 
-            <div class="Menu-item">
-                <h3>Tiramisu</h3>
-                <p>Layered Dessert With Coffee-Soaked Ladyfingers & Mascarpone.</p>
-            </div>
-        </div>
-    </section>
+			.nav-links {
+				text-decoration: none;
+				color: #ffffff;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="">Home</a>
+				<a href="">about us</a>
+				<a href="">contact us</a>
+				<a href="">services</a>
+			</nav>
+			<div class="header-text">
+				<h1>Bella Vita</h1>
+				<p>Authentic Italian Cuisine in the Heart of the City</p>
+				<button>Book a Table</button>
+			</div>
+		</header>
 
-    <section>
-        <h2>Reserve A Table</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <input type="datetime-local" required />
-            <textarea rows="4" placeholder="Special Request"></textarea>
-            <div class="flex-btn">
-                <button type="submit" class="submit">Submit Reservation</button>
-            </div>
-        </form>
-    </section>
+		<section>
+			<h2>Our Menu</h2>
+			<div class="Menu">
+				<div class="Menu-item">
+					<h3>Margherita Pizza</h3>
+					<p>Classic Delight with Fresh Basil, Mozarella & Tomato Sauce</p>
+				</div>
+				<div class="Menu-item">
+					<h3>Spaghetti Carbonara</h3>
+					<p>Traditional Roman Recipe With Eggs, Chesse & Pancetta.</p>
+				</div>
 
-    <footer>
-        <p>Bella Vita Resturant, 42 Main Street, Cityville</p><br>
+				<div class="Menu-item">
+					<h3>Tiramisu</h3>
+					<p>Layered Dessert With Coffee-Soaked Ladyfingers & Mascarpone.</p>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Reserve A Table</h2>
+			<form>
+				<input type="text" placeholder="Your Name" required />
+				<input type="email" placeholder="Your Email" required />
+				<input type="datetime-local" required />
+				<textarea rows="4" placeholder="Special Request"></textarea>
+				<div class="flex-btn">
+					<button type="submit" class="submit">Submit Reservation</button>
+				</div>
+			</form>
+		</section>
+
+		<footer>
+			<section class="footer-flex">
+				<div>coding</div>
+				<div>
+					<a class="nav-links" href="">home</a>
+					<a class="nav-links" href="">about us</a>
+					<a class="nav-links" href="">contact us</a>
+					<a class="nav-links" href="">services</a>
+				</div>
+			</section>
+			<!-- <p>Bella Vita Resturant, 42 Main Street, Cityville</p><br>
         <p>Email: Reservations@bellavita.com | Phone: (+234) 9131299488
         </p><br>
-        <p style="margin-top: 1rem;">2025 Bella Vita. All rights reserved &copy;</p>
-    </footer5>
-
-</body>
+        <p style="margin-top: 1rem;">2025 Bella Vita. All rights reserved &copy;</p> -->
+		</footer>
+	</body>
 </html>
